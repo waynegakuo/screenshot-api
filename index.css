@@ -1,0 +1,148 @@
+@import 'https://fonts.googleapis.com/css?family=Poppins';
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    margin: 0;
+    background-color: #efefef;    
+}
+
+nav {
+    background-color: #fff;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    overflow: hidden;
+}
+
+nav p {
+    color: #0594ec;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.burger {
+    border: 0;
+    background-color: transparent;
+    color: #0594ec;
+    font-size: 20px;
+    display: none;
+}
+
+.burger:focus{
+    outline: none;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #2c405e;
+    position: relative;
+}
+
+nav ul li a::after{
+    content: '';
+    background-color: #2c405e;
+    position: absolute;
+    left: 0;
+    bottom: -18px;
+    height: 2px;
+    width: 100%;
+    opacity: 0;
+    transition: transform 0.2s ease;
+}
+
+nav ul li a:hover::after{
+    transform: translateY(-15px);
+    opacity: 1;
+}
+
+/* responsiveness */
+@media (max-width: 480px){
+    .burger {
+        display: block;
+    }
+    nav ul {
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        flex-direction: column;
+        position: fixed;
+        top: 80px;
+        left: 10%;
+        width: 80%;
+        text-align: center;
+        transform: translateX(120%);
+        transition: transform 0.4s ease;
+    }
+
+    nav ul.show {
+        transform: translateX(0);
+    }
+
+    nav ul li {
+        margin: 15px;
+    }
+}
+
+.content {
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h3{
+    width: 50%;
+    text-align: center;
+}
+
+input[type='text']{
+    padding: 10px;
+    width: 50%;
+    outline: none;
+    border: 1px solid white ;
+    border-radius: 10px;
+}
+
+input[type='text']:focus{
+    font-size: 1.2rem;
+    outline: none;
+    background: rgba(0, 120, 250, 0.1);
+    transition: transform 0.2s ease;
+}
+
+input[type='button']{
+    font-size: 1.2rem;
+    margin-top: 30px;
+    border-style: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #2c405e;
+    color: white;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+input[type='button']:focus{
+    outline: none;
+}
+span#display{
+    margin-top: 20px;
+}

@@ -1,50 +1,41 @@
 function getScreenShot() {
-    const shotUrl = 'https://screenshotapi.net/api/v1/screenshot';
-    const urlProvided = document.getElementById('url').value;
-    const keys = 'EVXT0XRKV9UFRHUPV9FDLFSGSQO9T7LP'
 
     const displaySect = document.getElementById("display");
 
-
     const urlSc = new URL("https://screenshotapi.net/api/v1/screenshot")
     const urlInfo = document.getElementById('url').value;
-    const tokenKeys = 'EVXT0XRKV9UFRHUPV9FDLFSGSQO9T7LP'
 
-    urlSc.searchParams.append('url', urlInfo);
-    urlSc.searchParams.append('token', tokenKeys);
+    if (urlInfo !== '') {
+        const tokenKeys = config.API_KEY;
 
-    fetch(urlSc, {method: 'POST'})
-        .then(data => {
-            return data.json()
-        })
-        .then(res => { console.log(res) })
-        .catch(errror => console.log(error))
+        urlSc.searchParams.append('url', urlInfo);
+        urlSc.searchParams.append('token', tokenKeys);
 
+        fetch(urlSc, { method: 'POST' })
+            .then(data => {
+                return data.json()
+            })
+            .then(res => {
+                let imageHold = document.querySelector('a')
+                imageHold.href = res.screenshot;
+                imageHold.download;
+                imageHold.click();
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 5000)
+            })
+            .catch(err => console.log(err))
 
-
-    displaySect.innerHTML = urlSc;
-    
-
-
-
-
-
-
-    // const data = {
-    //     url: urlProvided,
-    //     token: keys
-    // }
-
-    // const params = {
-    //     body: data,
-    //     method: "POST"
-    // };
-
-    // fetch(shotUrl, params)
-    //     .then(data => {
-    //         return data.json()
-    //     })
-    //     .then(res => { console.log(res) })
-    //     .catch(errror => console.log(error))
-
+        displaySect.innerHTML = "Your image will be downloaded any second from now...   ";
+    }
+    else {
+        alert('Kindly provide the URL to screenshot');
+    }
 }
+
+const burger = document.getElementById('burger');
+const ul = document.querySelector('nav ul');
+
+burger.addEventListener('click', () => {
+    ul.classList.toggle('show');
+})
