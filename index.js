@@ -2,11 +2,11 @@ function getScreenShot() {
 
     const displaySect = document.getElementById("display");
 
-    const urlSc = new URL("https://screenshotapi.net/api/v1/screenshot")
+    const urlSc = new URL("https://screenshotapi.net/api/v1/screenshot");
+    const tokenKeys = document.getElementById('apiKey').value;
     const urlInfo = document.getElementById('url').value;
 
-    if (urlInfo !== '') {
-        const tokenKeys = config.API_KEY;
+    if (urlInfo !== '' && tokenKeys !== '') {
 
         urlSc.searchParams.append('url', urlInfo);
         urlSc.searchParams.append('token', tokenKeys);
