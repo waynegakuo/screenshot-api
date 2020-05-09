@@ -100,7 +100,7 @@ nav ul li a:hover::after{
 }
 
 .content {
-    height: 90vh;
+    height: 88vh;
     width: 100vw;
     display: flex;
     flex-wrap: wrap;
@@ -160,4 +160,20 @@ input[type='button']:focus{
 }
 span#display{
     margin-top: 20px;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+footer > span {
+    color: #2c405e;
+    opacity: 0.5;
+}
+
+footer > span > a {
+    text-decoration: none;
 }
