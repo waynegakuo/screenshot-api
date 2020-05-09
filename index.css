@@ -114,6 +114,21 @@ h3{
     text-align: center;
 }
 
+a.api_refer{
+    margin-top: 5px;
+    text-decoration: none;
+    font-size: 13px;
+    color:  rgba(0, 120, 250, 0.9);
+}
+
+input[type='text'].apikey{
+    padding: 10px;
+    width: 30%;
+    outline: none;
+    border: 1px solid white ;
+    border-radius: 10px;
+}
+
 input[type='text']{
     padding: 10px;
     width: 50%;
