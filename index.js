@@ -3,7 +3,8 @@ function getScreenShot() {
     const displaySect = document.getElementById("display");
 
     const urlSc = new URL("https://screenshotapi.net/api/v1/screenshot");
-    const tokenKeys = document.getElementById('apiKey').value;
+    // const tokenKeys = document.getElementById('apiKey').value;
+    const tokenKeys = 'Q5HAZETMQYJCKERKETGWQJC2QZSHIVJX	'
     const urlInfo = document.getElementById('url').value;
 
     if (urlInfo !== '' && tokenKeys !== '') {
